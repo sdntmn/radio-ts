@@ -1,0 +1,95 @@
+input[type="range"],
+::-webkit-slider-thumb,
+::-moz-range-thumb,
+::-ms-thumb {
+  -webkit-appearance: none;
+  background-color: #00aeb0;
+  width: 10px;
+  height: 20px;
+}
+
+.rangeSlider
+  display: flex;
+  width: 100%;
+  background-color: inherit;
+  flex-flow: row nowrap;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+
+
+  &__wrap
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: inset 0px 2px 2px -2px #242625, 0 3px 3px 1px #00adb08d,
+    0em 3px 1em rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+
+    & input[type="range"]
+      overflow: hidden;
+      position: relative;
+      min-height: 1.5em;
+      background-color: transparent;
+      display: none;
+      width: 100%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      &:focus
+        outline: transparent;
+
+  &__ticks
+    display: flex;
+    font-family: "Roboto", sans-serif, monospace;
+    font-size: 45px;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 100%;
+
+  &__data
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 36px;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    pointer-events: none;
+
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0em 0em 0.5em #00adb08d inset, 0 -0.2em 0.2em 0 rgba(0, 0, 0, 0.2),
+    1px 1px 10px rgba(0, 0, 0, 0.3);
+
+
+.range
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  height: 40px;
+
+  &__tick
+    display: inline-block;
+    color: #454954;
+    font-size: 0.5em;
+    text-align: center;
+    width: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+
+  &__tick-text
+    display: inline-block;
+    transform: translateX(-50%);

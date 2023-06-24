@@ -1,0 +1,58 @@
+.levelVolume
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  grid-template-rows: 40px;
+  gap: 10px;
+  max-width: 70%;
+  margin: 10px 15% 0;
+  padding: 0 20px;
+
+
+  &__down
+    margin: 0;
+    margin-left: -48px;
+    padding: 0;
+    background: inherit;
+    display: inline-block;
+    border: 20px solid transparent;
+    border-right: 48px solid #214a4b8d;
+    opacity: 0.6;
+    position: relative;
+    cursor: pointer;
+
+    &:after
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: -15px;
+      left: -3px;
+      border: 15px solid transparent;
+      border-right: 40px solid #00adb08d;
+
+    &:active
+      margin-left: -45px;
+      opacity: 0.7;
+
+  &__up
+    margin: 0;
+    padding: 0;
+    background: inherit;
+    display: inline-block;
+    border: 20px solid transparent;
+    border-left: 48px solid #214a4b8d;
+    opacity: 0.6;
+    position: relative;
+    cursor: pointer;
+
+    &:after
+      content: " ";
+      display: inline-block;
+      position: absolute;
+      top: -15px;
+      left: -42px;
+      border: 15px solid transparent;
+      border-left: 40px solid #00adb08d;
+
+    &:active
+      border-left: 45px solid #214a4b8d;
+      opacity: 0.7;
