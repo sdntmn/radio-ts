@@ -13,6 +13,7 @@
 
 
   &__title
+    cursor: pointer;
     margin: 0 auto;
     padding: 0;
     text-align: center;
@@ -25,7 +26,7 @@
   &__items
     margin: 0;
     padding: 0;
-    max-height: 72vh;
+    max-height: 0;
     list-style: none;
     overflow-y: auto;
     max-width: 100%;
@@ -33,3 +34,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: .4vh;
+
+    &_open
+      max-height: 72vh;

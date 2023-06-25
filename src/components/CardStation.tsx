@@ -1,29 +1,34 @@
 import { ITrack } from "../App"
+import { Equalizer } from "./Equalizer"
 
 export interface Props {
   card: ITrack
   classButton: string
-  setRadioIndex: (arg: number) => void
+  radioIndex: number
+  setRadioIndex: (e: React.MouseEvent<HTMLElement>, arg: number) => void
   onClick: (e: React.MouseEvent<HTMLButtonElement>, arg: string) => void
 }
 export const CardStation: React.FC<Props> = ({
   card,
   classButton,
+  radioIndex,
   setRadioIndex,
   onClick
 }) => {
   const { index, img, name, like } = card
 
-  function handleClick() {
+  function handleClick(e: React.MouseEvent<HTMLElement>) {
     if (typeof index === "number") {
-      setRadioIndex(index)
+      setRadioIndex(e, index)
     }
   }
+
+  const currentCard = card.index === radioIndex
 
   return (
     <>
       <li
-        className="card "
+        className={`card ${currentCard && "card_curent"}`}
         onClick={handleClick}>
         <div className="card__wrap">
           <img
@@ -38,6 +43,7 @@ export const CardStation: React.FC<Props> = ({
               className={classButton}
               onClick={e => onClick(e, card.id)}></button>
           )}
+          {currentCard && <Equalizer></Equalizer>}
         </div>
       </li>
     </>

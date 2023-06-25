@@ -2,25 +2,30 @@ import React, { useState, useEffect, useMemo } from "react"
 import { ITrack } from "../App"
 import { EProperty } from "../constants/enums"
 import { LocalStorage } from "../helpers/LocalStorage"
-import Header from "../components/Header"
+
 import { RadioList } from "../components/RadioList"
 import { Footer } from "../components/Footer"
 import { Favorites } from "../components/Favorites"
-import { AudioControls } from "../components/AudioControls"
+
 import VolumeRange from "../components/VolumeRange"
 import { CurrentCardStation } from "components/CurrentCardStation"
+import { Header } from "components/Header"
 
 export interface Props {
   tracks: ITrack[]
 }
 export const Main: React.FC<Props> = ({ tracks }) => {
   //Список избранного. Первоначальное получение данных из localStorage
+  //  let tracksSort = tracks.sort((a, b) => (a.name > b.name ? 1 : -1))
   let listSaveInLocalStorage =
     LocalStorage.getLocal<string[]>(EProperty.listSave) || null
-  const [isLastRadioStation, setIsLastRadioStation] = useState(
-    LocalStorage.getLocal(EProperty.lastStation) || []
+  // const [lastRadioStation, setLastRadioStation] = useState(
+  //   LocalStorage.getLocal(EProperty.lastStation) || 0
+  // )
+
+  const [radioIndex, setRadioIndex] = useState(
+    Number(LocalStorage.getLocal(EProperty.lastStation))
   )
-  const [radioIndex, setRadioIndex] = useState(0)
   const { name, img, url, id } = tracks[radioIndex]
   const [listRadioStation, setListRadioStation] = useState<ITrack[]>([])
   const [listFavoriteRadioStation, setlistFavoriteRadioStation] = useState<
@@ -48,13 +53,18 @@ export const Main: React.FC<Props> = ({ tracks }) => {
 
   // Сохранение в state
 
-  // useEffect(() => {
-  //   LocalStorage.setLocal(EProperty.lastStation, JSON.stringify(radioIndex))
-  // }, [radioIndex])
+  useEffect(() => {
+    if (radioIndex) {
+      LocalStorage.setLocal(EProperty.lastStation, radioIndex.toString())
+    }
+    if (radioIndex === 0) {
+      LocalStorage.setLocal(EProperty.lastStation, radioIndex.toString())
+    }
+  }, [radioIndex])
 
-  // useEffect(() => {
-  //   setIsLastRadioStation(LocalStorage.getLocal(EProperty.lastStation) || [])
-  // }, [])
+  useEffect(() => {
+    setRadioIndex(Number(LocalStorage.getLocal(EProperty.lastStation)))
+  }, [])
 
   // =================================================================
 
@@ -65,11 +75,18 @@ export const Main: React.FC<Props> = ({ tracks }) => {
 
   // Свойство указывает состояние готовности носителя.
   // Можно использовать как preloader !!!
-  const readyToPlay = audioElement.readyState
+  // const readyToPlay = audioElement.readyState
 
-  useEffect(() => {
-    audioElement.load()
-  }, [audioElement, readyToPlay])
+  // useEffect(() => {
+  //   let readyToPlay = audioElement.readyState
+  //   console.info(readyToPlay)
+  //   setTimeout(() => {
+  //     if ((readyToPlay = 0)) {
+  //       console.info("сработал")
+  //       audioElement.load()
+  //     }
+  //   }, 3000)
+  // }, [audioElement])
 
   // Весь список радиостанций
   useEffect(() => {
@@ -184,9 +201,18 @@ export const Main: React.FC<Props> = ({ tracks }) => {
     }
   }
 
+  const clickCardInList = (e: React.MouseEvent<HTMLElement>, arg: number) => {
+    e.stopPropagation()
+    if (arg && isPlaying) {
+      setRadioIndex(arg)
+    } else {
+      setRadioIndex(arg)
+    }
+  }
+
   // play или pause
   const hendelPlayOrPause = (
-    e: React.MouseEvent<HTMLButtonElement>,
+    e: React.MouseEvent<HTMLElement>,
     arg: boolean
   ) => {
     e.stopPropagation()
@@ -207,9 +233,9 @@ export const Main: React.FC<Props> = ({ tracks }) => {
 
   useEffect(() => {
     if (isPlaying) {
-      audioElement.autoplay = isPlaying
+      audioElement.play()
     } else {
-      audioElement.autoplay = !isPlaying
+      audioElement.pause()
     }
   }, [isPlaying, audioElement])
 
@@ -234,13 +260,16 @@ export const Main: React.FC<Props> = ({ tracks }) => {
       </div>
       <RadioList
         tracks={tracks}
-        setRadioIndex={setRadioIndex}
+        setRadioIndex={clickCardInList}
         handleCardDelete={deleteCardFavorite}
+        radioIndex={radioIndex}
       />
       <Favorites
         tracks={listFavoriteRadioStation}
-        setRadioIndex={setRadioIndex}
+        setRadioIndex={clickCardInList}
         handleCardDelete={deleteCardFavorite}
+        radioIndex={radioIndex}
+        listFavoriteRadioStation={listFavoriteRadioStation}
       />
       <Footer />
     </div>
