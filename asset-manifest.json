@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sdntmn/radio-ts/static/css/main.6ffe1a9c.css",
-    "main.js": "/sdntmn/radio-ts/static/js/main.0ef9595e.js",
+    "main.css": "/sdntmn/radio-ts/static/css/main.f4410a2f.css",
+    "main.js": "/sdntmn/radio-ts/static/js/main.35b4eaaf.js",
     "static/js/787.4ed96858.chunk.js": "/sdntmn/radio-ts/static/js/787.4ed96858.chunk.js",
     "static/media/radioImg.jpg": "/sdntmn/radio-ts/static/media/radioImg.9b3b9c167100bdc49ea2.jpg",
     "static/media/play-button-svgrepo-com.svg": "/sdntmn/radio-ts/static/media/play-button-svgrepo-com.eb7b8dc09d0c134388e271e5781c7c1c.svg",
@@ -11,12 +11,12 @@
     "static/media/delete-icon.svg": "/sdntmn/radio-ts/static/media/delete-icon.2af49b82d305a6ea3442.svg",
     "static/media/Vector.svg": "/sdntmn/radio-ts/static/media/Vector.f7d0fb0a8164db3d536c.svg",
     "static/media/favorite.svg": "/sdntmn/radio-ts/static/media/favorite.fc6b76e565fc096f4a68.svg",
-    "main.6ffe1a9c.css.map": "/sdntmn/radio-ts/static/css/main.6ffe1a9c.css.map",
-    "main.0ef9595e.js.map": "/sdntmn/radio-ts/static/js/main.0ef9595e.js.map",
+    "main.f4410a2f.css.map": "/sdntmn/radio-ts/static/css/main.f4410a2f.css.map",
+    "main.35b4eaaf.js.map": "/sdntmn/radio-ts/static/js/main.35b4eaaf.js.map",
     "787.4ed96858.chunk.js.map": "/sdntmn/radio-ts/static/js/787.4ed96858.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ffe1a9c.css",
-    "static/js/main.0ef9595e.js"
+    "static/css/main.f4410a2f.css",
+    "static/js/main.35b4eaaf.js"
   ]
 }
