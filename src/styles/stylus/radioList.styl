@@ -29,6 +29,7 @@
     max-height: 0;
     list-style: none;
     overflow-y: auto;
+    -webkit-overflow-scrolling:touch;
     max-width: 100%;
     display: flex;
     flex-direction: row;
@@ -37,3 +38,14 @@
 
     &_open
       max-height: 72vh;
+
+@media all and (device-width: 1620px) and (device-height: 2160px) and (orientation:portrait) {
+  .radioList__items_open {
+    max-height: 72vh;/* your css rules for ipad portrait */
+  }
+}
+@media all and (device-width: 2160px) and (device-height: 1620px) and (orientation:landscape) {
+  .radioList__items_open {
+    max-height: 67vh
+  }
+}

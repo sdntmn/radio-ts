@@ -19,13 +19,11 @@ export const Main: React.FC<Props> = ({ tracks }) => {
   //  let tracksSort = tracks.sort((a, b) => (a.name > b.name ? 1 : -1))
   let listSaveInLocalStorage =
     LocalStorage.getLocal<string[]>(EProperty.listSave) || null
-  // const [lastRadioStation, setLastRadioStation] = useState(
-  //   LocalStorage.getLocal(EProperty.lastStation) || 0
-  // )
 
   const [radioIndex, setRadioIndex] = useState(
     Number(LocalStorage.getLocal(EProperty.lastStation))
   )
+
   const { name, img, url, id } = tracks[radioIndex]
   const [listRadioStation, setListRadioStation] = useState<ITrack[]>([])
   const [listFavoriteRadioStation, setlistFavoriteRadioStation] = useState<
