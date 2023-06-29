@@ -9891,13 +9891,6 @@ export const potok = [
     img: "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/ba/9d/2f/ba9d2fde-8269-34bf-bc98-3b14d0257e7a/AppIcon-85-220-4-2x.png/1200x630bb.png",
   },
   {
-    id: "62ba0c283ca1f692853ec713",
-    like: false,
-    name: "NRJ DnB (Таллинн)",
-    url: "https://str.pcradio.ru/nrj_ee_dnb-hi",
-    img: "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/ba/9d/2f/ba9d2fde-8269-34bf-bc98-3b14d0257e7a/AppIcon-85-220-4-2x.png/1200x630bb.png",
-  },
-  {
     id: "62ba0c283ca1f692853ec714",
     like: false,
     name: "NRJ FM (Energy FM)",
