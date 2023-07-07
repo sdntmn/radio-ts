@@ -24,3 +24,6 @@ yarn-error.log*
 package.json
 .vscode/settings.json
 .gitignore
+arhive29_06.tar
+.vscode/launch.json
+src/components/RadioList/__snapshots__/RadioList.test.tsx.snap
