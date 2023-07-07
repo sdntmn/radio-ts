@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { ITrack } from "../App"
-import { AudioControls } from "./AudioControls"
+import { AudioControls } from "./AudioControls/AudioControls"
 
 export interface Props {
   img: string

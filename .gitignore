@@ -24,3 +24,7 @@ yarn-error.log*
 package.json
 .vscode/settings.json
 .gitignore
+.vscode/launch.json
+arhive29_06.tar
+.gitignore
+/**/*.test.tsx.snap

@@ -3,13 +3,14 @@ import { ITrack } from "../App"
 import { EProperty } from "../constants/enums"
 import { LocalStorage } from "../helpers/LocalStorage"
 
-import { RadioList } from "../components/RadioList"
+
 import { Footer } from "../components/Footer"
 import { Favorites } from "../components/Favorites"
 
 import VolumeRange from "../components/VolumeRange"
 import { CurrentCardStation } from "components/CurrentCardStation"
 import { Header } from "components/Header"
+import { RadioList } from "components"
 
 export interface Props {
   tracks: ITrack[]

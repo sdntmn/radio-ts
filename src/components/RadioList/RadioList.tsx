@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { ITrack } from "../App"
-import { CardStation } from "./CardStation"
+import { ITrack } from "../../App"
+import { CardStation } from "../CardStation"
 
 export interface Props {
   tracks: ITrack[]
@@ -45,7 +45,7 @@ export const RadioList: React.FC<Props> = ({
           className={`radioList__items cards ${
             isOpen && "radioList__items_open"
           }`}>
-          {card}
+          {tracks.length ? card : null}
         </ul>
         <div className="favorites__footer"></div>
       </div>

@@ -24,7 +24,7 @@ gulp.task("default", function () {
 
 var nodemonOptions = {
   script: "src/index.js",
-  ext: "js jsx",
+  ext: ['js/**/*.ts', "js/**/*.tsx", '!js/**/*.test.tsx'],
   env: { NODE_ENV: "development" },
   verbose: false,
   ignore: [],

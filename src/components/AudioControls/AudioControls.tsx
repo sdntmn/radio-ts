@@ -1,8 +1,8 @@
 import React from "react"
-import { ReactComponent as Play } from "../images/play-button-svgrepo-com.svg"
-import { ReactComponent as Pause } from "../images/pause-svgrepo-com.svg"
-import { ReactComponent as Next } from "../images/forward-svgrepo-com.svg"
-import { ReactComponent as Prev } from "../images/forward-svgrepo-com.svg"
+import { ReactComponent as Play } from "../../images/play-button-svgrepo-com.svg"
+import { ReactComponent as Pause } from "../../images/pause-svgrepo-com.svg"
+import { ReactComponent as Next } from "../../images/forward-svgrepo-com.svg"
+import { ReactComponent as Prev } from "../../images/forward-svgrepo-com.svg"
 
 export interface Props {
   isPlaying: boolean
