@@ -50,8 +50,14 @@ export const Favorites: React.FC<Props> = ({
         }`}>
         {card}
       </ul>
-      <div className="favorites__footer">
-        {!isOpen && `${listFavoriteRadioStation.length + " радиостанций"}`}
+      <div
+        onClick={openFavoriteList}
+        className="favorites__footer">
+        {!isOpen && listFavoriteRadioStation.length
+          ? `${listFavoriteRadioStation.length + " радиостанций"}`
+          : ""}
+
+        {isOpen && !listFavoriteRadioStation.length && <p>Пока список пуст</p>}
       </div>
     </div>
   )

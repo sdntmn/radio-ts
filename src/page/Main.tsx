@@ -66,27 +66,9 @@ export const Main: React.FC<Props> = ({ tracks }) => {
 
   // =================================================================
 
-  const audioElement: HTMLAudioElement = useMemo(() => new Audio(url), [url])
+  const audioElement: HTMLMediaElement = useMemo(() => new Audio(url), [url])
   audioElement.preload = "auto"
-  const valueStep = (audioElement.volume = 0.3) // шаг громкости
-  // audioElement.value = 0.5 // первоначальная громкость
 
-  // Свойство указывает состояние готовности носителя.
-  // Можно использовать как preloader !!!
-  // const readyToPlay = audioElement.readyState
-
-  // useEffect(() => {
-  //   let readyToPlay = audioElement.readyState
-  //   console.info(readyToPlay)
-  //   setTimeout(() => {
-  //     if ((readyToPlay = 0)) {
-  //       console.info("сработал")
-  //       audioElement.load()
-  //     }
-  //   }, 3000)
-  // }, [audioElement])
-
-  // Весь список радиостанций
   useEffect(() => {
     if (listRadioStation.length < 1) {
       setListRadioStation(
@@ -241,7 +223,7 @@ export const Main: React.FC<Props> = ({ tracks }) => {
     <div className="page">
       <Header />
       <div className="main">
-        <VolumeRange audioElement={audioElement} />
+        {/* <VolumeRange audioElement={audioElement} /> */}
         <CurrentCardStation
           radioIndex={radioIndex}
           name={name}

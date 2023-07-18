@@ -1,5 +1,5 @@
 import "./index.css"
-import { potok } from "./data/potok"
+import { potok } from "./data/radioStation"
 import { Main } from "./page/Main"
 
 export interface ITrack {

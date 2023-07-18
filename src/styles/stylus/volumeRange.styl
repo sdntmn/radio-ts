@@ -1,41 +1,72 @@
 .levelVolume
-  display: grid;
-  grid-template-columns: 30px 1fr 30px;
-  grid-template-rows: 40px;
+  display: flex;
+  flex-direction: column
+  align-items: center
   gap: 10px;
-  max-width: 70%;
-  margin: 10px 15% 0;
-  padding: 0 20px;
 
+  &__title
+    margin: 0 auto;
+    color: #026061;
+    font-weight: 100;
+    font-size: 14p
+
+  &__buttons-wrap
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%;
+
+  &__button
+    display: flex
+    border: none
+    background: inherit
+    cursor: pointer;
+    color: #115051;
+
+  &__digital-scoreboard-wrap
+    border: 1px solid #214a4b8d;
+    border-radius: 4px;
+    min-width: 80px;
+    text-align: center
+
+  &__text-button-wrap
+    position: relative
+    cursor: pointer;
+
+  &__text-button
+    position: absolute
+    font-size: 10px;
+    color: #7fffd4;
+    text-align: center;
+    padding: 0
+
+    &_position-mute
+      left: 29px
+      top: 6px
+      z-index: 10
+
+    &_position-full
+      left: 33px
+      top: -20px
+      z-index: 10
+
+  &__digital-scoreboard
+    position: relative
+    font-size: 20px
+    color: #7fffd4;
+    padding: 4px 8px
+    margin: 0 auto
 
   &__down
-    margin: 0;
-    margin-left: -48px;
-    padding: 0;
     background: inherit;
-    display: inline-block;
     border: 20px solid transparent;
     border-right: 48px solid #214a4b8d;
     opacity: 0.6;
     position: relative;
     cursor: pointer;
 
-    &:after
-      content: "";
-      display: inline-block;
-      position: absolute;
-      top: -15px;
-      left: -3px;
-      border: 15px solid transparent;
-      border-right: 40px solid #00adb08d;
-
-    &:active
-      margin-left: -45px;
-      opacity: 0.7;
 
   &__up
-    margin: 0;
-    padding: 0;
     background: inherit;
     display: inline-block;
     border: 20px solid transparent;
@@ -44,15 +75,12 @@
     position: relative;
     cursor: pointer;
 
-    &:after
-      content: " ";
-      display: inline-block;
-      position: absolute;
-      top: -15px;
-      left: -42px;
-      border: 15px solid transparent;
-      border-left: 40px solid #00adb08d;
+.icon
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    &:active
-      border-left: 45px solid #214a4b8d;
-      opacity: 0.7;
+  font-size: 36px;
+  color: $blue;
+
+  transition: all ease-in-out 0.15s;

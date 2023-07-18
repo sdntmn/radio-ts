@@ -47,7 +47,9 @@ export const RadioList: React.FC<Props> = ({
           }`}>
           {card}
         </ul>
-        <div className="favorites__footer"></div>
+        <div
+          className="favorites__footer"
+          onClick={openRadioList}></div>
       </div>
     </>
   )
