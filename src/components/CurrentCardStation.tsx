@@ -1,5 +1,4 @@
-import React, { useEffect } from "react"
-import { ITrack } from "../App"
+import React from "react"
 import { AudioControls } from "./AudioControls"
 
 export interface Props {

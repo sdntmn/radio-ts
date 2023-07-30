@@ -264,14 +264,6 @@ export const potok = [
     genre: "Rock",
   },
   {
-    id: "62ba0c283ca1f692853ebfde",
-    like: false,
-    name: "Mixadance FM-Main",
-    url: "https://stream.mixadance.fm/mixadance128",
-    img: "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/ba/9d/2f/ba9d2fde-8269-34bf-bc98-3b14d0257e7a/AppIcon-85-220-4-2x.png/1200x630bb.png",
-    genre: "Pop",
-  },
-  {
     id: "62ba0c283ca1f692853ebfe9",
     like: false,
     name: "Radio Gora-ATD",

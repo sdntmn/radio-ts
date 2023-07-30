@@ -37,7 +37,9 @@ export const Favorites: React.FC<Props> = ({
     />
   ))
   return (
-    <div className="favorites">
+    <div
+      className="favorites"
+      itemRef="favorites">
       <div
         className="favorites__wrap-title"
         onClick={openFavoriteList}>

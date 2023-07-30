@@ -1,3 +1,4 @@
+import { useRef } from "react"
 import { ITrack } from "../App"
 import { Equalizer } from "./Equalizer"
 
@@ -17,6 +18,8 @@ export const CardStation: React.FC<Props> = ({
 }) => {
   const { index, img, name, like } = card
 
+  const cardRef = useRef<HTMLLIElement>(null)
+
   function handleClick(e: React.MouseEvent<HTMLElement>) {
     if (typeof index === "number") {
       setRadioIndex(e, index)
@@ -25,10 +28,19 @@ export const CardStation: React.FC<Props> = ({
 
   const currentCard = card.index === radioIndex
 
+  const el = cardRef?.current
+
+  if (el) {
+    if (currentCard) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }
+
   return (
     <>
       <li
-        className={`card ${currentCard && "card_curent"}`}
+        ref={cardRef}
+        className={`card ${currentCard && "card_current"}`}
         onClick={handleClick}>
         <div className="card__wrap">
           <img

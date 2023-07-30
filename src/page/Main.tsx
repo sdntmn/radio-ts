@@ -7,7 +7,6 @@ import { RadioList } from "../components/RadioList"
 import { Footer } from "../components/Footer"
 import { Favorites } from "../components/Favorites"
 
-import VolumeRange from "../components/VolumeRange"
 import { CurrentCardStation } from "components/CurrentCardStation"
 import { Header } from "components/Header"
 
@@ -221,7 +220,7 @@ export const Main: React.FC<Props> = ({ tracks }) => {
 
   return (
     <div className="page">
-      <Header />
+      <Header audioElement={audioElement} />
       <div className="main">
         {/* <VolumeRange audioElement={audioElement} /> */}
         <CurrentCardStation

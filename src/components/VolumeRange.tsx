@@ -85,7 +85,7 @@ export const VolumeRange: React.FC<Props> = ({ audioElement }) => {
 
   return (
     <div className="levelVolume">
-      <h3 className="levelVolume__title"> Уровень громкости</h3>
+      {/* <h3 className="levelVolume__title"> Уровень громкости</h3> */}
 
       <div className="levelVolume__buttons-wrap">
         <div className="icon">
